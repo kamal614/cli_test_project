@@ -10,13 +10,14 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('HomeView'),
+          title: const Text('HomeView GetX'),
           centerTitle: true,
         ),
         body: controller.obx((state) {
           return ListView.builder(
             itemCount: controller.state!.length,
             itemBuilder: (context, index) {
+              print("TOTAL LENGTH ${controller.state!.length}");
               print(state![index]);
               return Column(
                 children: <Widget>[
@@ -32,27 +33,28 @@ class HomeView extends GetView<HomeController> {
                     child: Container(
                       color: Colors.lightBlue.shade100,
                       width: 400,
-                      height: 240,
+                      height: MediaQuery.of(context).size.height * .1,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.fromLTRB(8.0, 13.0, 8.0, 0),
+                            padding:
+                                const EdgeInsets.fromLTRB(8.0, 13.0, 8.0, 0),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Container(
+                                SizedBox(
                                   height: 50.0,
                                   width: 60.0,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(15.0),
                                     child: Image.network(
-                                      'https://onlinejpgtools.com/images/examples-onlinejpgtools/coffee-resized.jpg',
+                                      state[index]['picture']['thumbnail'],
                                       fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 8,
                                 ),
                                 Column(
@@ -62,8 +64,12 @@ class HomeView extends GetView<HomeController> {
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 6.0, 0, 0),
                                       child: Text(
-                                        'Cafe Coffee Day',
-                                        style: TextStyle(
+                                        state[index]['name']['title'] +
+                                            " " +
+                                            state[index]['name']['first'] +
+                                            " " +
+                                            state[index]['name']['last'],
+                                        style: const TextStyle(
                                           color: Colors.black,
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -71,120 +77,13 @@ class HomeView extends GetView<HomeController> {
                                       ),
                                     ),
                                     Text(
-                                      'Alpha 1, Greater Noida',
-                                      style: TextStyle(color: Colors.grey),
+                                      state[index]['email'].toString(),
+                                      style:
+                                          const TextStyle(color: Colors.grey),
                                     ),
                                   ],
                                 ),
                               ],
-                            ),
-                          ),
-                          Divider(
-                            color: Colors.black,
-                            thickness: .2,
-                            indent: 8,
-                            endIndent: 8,
-                          ),
-                          Container(
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(8.0, 0, 0, 0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    'ITEMS',
-                                    style: TextStyle(color: Colors.grey[700]),
-                                  ),
-                                  Text(
-                                    '5 x Cold Coffee',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    'ORDERED ON',
-                                    style: TextStyle(color: Colors.grey[700]),
-                                  ),
-                                  Text(
-                                    '28 Feb 2020 at 1:36 PM',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    'TOTAL AMOUNT',
-                                    style: TextStyle(color: Colors.grey[700]),
-                                  ),
-                                  Text(
-                                    '\u20B9480.00',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          Divider(
-                            color: Colors.black,
-                            thickness: .2,
-                            indent: 8,
-                            endIndent: 8,
-                          ),
-                          Container(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Text(
-                                    'Delivered',
-                                    style: TextStyle(color: Colors.grey[700]),
-                                  ),
-                                  GestureDetector(
-                                    onTap: null,
-                                    child: Container(
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.end,
-                                        children: <Widget>[
-                                          Padding(
-                                            padding: const EdgeInsets.fromLTRB(
-                                                0, 0, 0, 2.0),
-                                            child: Icon(
-                                              Icons.replay,
-                                              size: 12,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            width: 3,
-                                          ),
-                                          Text(
-                                            'Repeat Order',
-                                            style: TextStyle(
-                                                color: Colors.grey[700]),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
                             ),
                           ),
                         ],
