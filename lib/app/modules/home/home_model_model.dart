@@ -1,10 +1,10 @@
-class Dummy {
+class HomeModel {
   List<Results>? results;
   Info? info;
 
-  Dummy({this.results, this.info});
+  HomeModel({this.results, this.info});
 
-  Dummy.fromJson(Map<String, dynamic> json) {
+  HomeModel.fromJson(Map<String, dynamic> json) {
     if (json['results'] != null) {
       results = <Results>[];
       json['results'].forEach((v) {
