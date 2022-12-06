@@ -1,0 +1,66 @@
+{
+    "results": [
+        {
+            "gender": "male",
+            "name": {
+                "title": "Mr",
+                "first": "Vernislav",
+                "last": "Matviychuk"
+            },
+            "location": {
+                "street": {
+                    "number": 4018,
+                    "name": "Glinyana"
+                },
+                "city": "Kam'yanka-Dniprovska",
+                "state": "Kiyivska",
+                "country": "Ukraine",
+                "postcode": 59951,
+                "coordinates": {
+                    "latitude": "80.5588",
+                    "longitude": "-103.5480"
+                },
+                "timezone": {
+                    "offset": "-9:00",
+                    "description": "Alaska"
+                }
+            },
+            "email": "vernislav.matviychuk@example.com",
+            "login": {
+                "uuid": "28163668-dc2d-4ab1-96d5-7d5fdd849ff7",
+                "username": "ticklishgoose542",
+                "password": "gretchen",
+                "salt": "2Xk3NTef",
+                "md5": "2aec9db6086cffd38b4fe9a5bad9b931",
+                "sha1": "9265a08e1b5b6a2fc25c9929137f6cd55d4c387a",
+                "sha256": "cf21e65a187fa0d0b433ef24cd2ba613d2ac80f0f481930f7176a79552b7f40e"
+            },
+            "dob": {
+                "date": "1993-07-12T05:57:43.670Z",
+                "age": 29
+            },
+            "registered": {
+                "date": "2009-04-30T14:39:20.109Z",
+                "age": 13
+            },
+            "phone": "(098) V52-5994",
+            "cell": "(068) E74-2890",
+            "id": {
+                "name": "",
+                "value": null
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/men/95.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/men/95.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/95.jpg"
+            },
+            "nat": "UA"
+        }
+    ],
+    "info": {
+        "seed": "24f12ebae6d03b8e",
+        "results": 1,
+        "page": 1,
+        "version": "1.4"
+    }
+}
