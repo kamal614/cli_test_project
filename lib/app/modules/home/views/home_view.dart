@@ -10,7 +10,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.refresh),
+          child: const Icon(Icons.refresh),
           onPressed: () {
             controller.onInit();
           },
@@ -23,7 +23,6 @@ class HomeView extends GetView<HomeController> {
           return ListView.builder(
             itemCount: controller.state!.length,
             itemBuilder: (context, index) {
-              print("TOTAL LENGTH ${controller.state!.length}");
               print(state![index]);
               return Column(
                 children: <Widget>[
@@ -39,7 +38,7 @@ class HomeView extends GetView<HomeController> {
                     child: Container(
                       color: Colors.lightBlue.shade100,
                       width: 400,
-                      height: MediaQuery.of(context).size.height * .1,
+                      height: MediaQuery.of(context).size.height * .12,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -92,6 +91,21 @@ class HomeView extends GetView<HomeController> {
                               ],
                             ),
                           ),
+                          const SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.home,
+                                color: Colors.blue,
+                              ),
+                              Text(state[index]['location']['city'] +
+                                  " " +
+                                  state[index]['location']['state'] +
+                                  " " +
+                                  state[index]['location']['country'])
+                            ],
+                          )
                         ],
                       ),
                     ),
